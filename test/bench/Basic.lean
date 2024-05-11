@@ -570,7 +570,8 @@ theorem le_add_of_sub_le {a b c : Nat} (h : a - b ≤ c) : a ≤ c + b := by
 @[simp] protected theorem zero_sub (n : Nat) : 0 - n = 0 := by
   induction n with
   | zero => rfl
-  | succ n ih => simp [ih, Nat.sub_succ]
+  | succ n ih => simp [ih, Nat.sub_succ, pred]
+
 
 protected theorem sub_self_add (n m : Nat) : n - (n + m) = 0 := by
   show (n + 0) - (n + m) = 0
